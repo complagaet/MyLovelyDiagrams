@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="CSS/LazyLukPack.css">
+        <link rel="stylesheet" href="CSS/main.css">
+        <script src="JS/Bobatron.js"></script>
+        <script src="JS/chart/dist/chart.umd.js"></script>
+        <script src="JS/Main.js"></script>
+        <title>Nanoblogger</title>
+    </head>
+    <body>
+        <div class="app-window bobatron" Bt-Color="#ffffff" Bt-CM="1.3">
+            <div class="horizontal-container window-header">
+                <h3>MyLovelyDiagrams</h3>
+            </div>
+            <div class="horizontal-container" style="gap: 10px">
+                <button class="bobatron" Bt-CM="0.5" id="getChartBtn">Get Chart</button>
+                <button class="bobatron" Bt-CM="0.5" id="getMetricsBtn">Get Metrics</button>
+            </div>
+            <br>
+            <div class="vertical-container flex-aligncenter flex-justifycenter" id="loading" style="gap: 10px; height: 100%">
+                <p>Please wait...</p>
+            </div>
+            <div class="vertical-container flex-aligncenter flex-justifycenter" id="metricsBuilder" style="display: none; gap: 10px; height: 100%">
+                <p id="metricsField">Please wait...</p>
+            </div>
+            <div class="vertical-container flex-aligncenter flex-justifycenter" id="menuRequestDataset" style="display: none; gap: 10px; height: 100%">
+
+                <h2>Get Chart</h2>
+                <br>
+
+                <div class="vertical-container" style="gap: 10px; max-width: 300px">
+                    <label for="collectionName" style="font-weight: bold;">Collection name</label>
+                    <input type="text" id="collectionName" class="bobatron" Bt-CM="0.5" placeholder="collection_name" required>
+
+                    <label style="font-weight: bold;">Required fields</label>
+                    <div class="vertical-container" id="fieldsWrapper" style="gap: 10px">
+                        <div class="horizontal-container flex-aligncenter" style="gap: 10px">
+                            <p style="width: 45px;">field1</p>
+                            <input type="text" class="bobatron fields" style="width: 100%" Bt-CM="0.5" placeholder="field" required>
+                        </div>
+                    </div>
+                    <button class="bobatron" Bt-CM="0.5" id="addField" onclick="">+</button>
+
+                    <br>
+
+                    <div class="horizontal-container" style="gap: 10px">
+                        <div class="vertical-container" style="gap: 10px">
+                            <label for="dateMin" style="font-weight: bold;">From</label>
+                            <input id="dateMin" type="date" class="bobatron" Bt-CM="0.5" style="width: 100%">
+                        </div>
+                        <div class="vertical-container" style="gap: 10px">
+                            <label for="dateMax" style="font-weight: bold;">To</label>
+                            <input id="dateMax" type="date" class="bobatron" Bt-CM="0.5" style="width: 100%">
+                        </div>
+                    </div>
+
+                    <button class="bobatron" Bt-CM="0.5" onclick="" id="findData">Find data</button>
+                    <br>
+                </div>
+
+            </div>
+            <div class="vertical-container flex-aligncenter flex-justifycenter" id="menuRequestMetrics" style="display: none; gap: 10px; height: 100%">
+
+                <h2>Get Metrics</h2>
+                <br>
+
+                <div class="vertical-container" style="gap: 10px; max-width: 300px">
+                    <label for="collectionName" style="font-weight: bold;">Collection name</label>
+                    <input type="text" id="collectionName2" class="bobatron" Bt-CM="0.5" placeholder="collection_name" required>
+
+                    <label style="font-weight: bold;">Required field</label>
+                    <input type="text" class="bobatron" id="reqField" style="width: 100%" Bt-CM="0.5" placeholder="field" required>
+
+                    <button class="bobatron" Bt-CM="0.5" id="getMetricsBtn2">Get Metrics</button>
+                    <br>
+                </div>
+
+            </div>
+            <div class="vertical-container flex-aligncenter flex-justifycenter" id="chartBuilder" style="display: none; gap: 10px; height: 100%">
+                <h2>Graph builder</h2>
+                <canvas id="graph"></canvas>
+                <br>
+            </div>
+        </div>
+        <div class="footer">
+            <h5 style="text-align: center; color: #b081f5">SE-2331<br>Pavel Lukoyanov</h5>
+        </div>
+    </body>
+</html>
